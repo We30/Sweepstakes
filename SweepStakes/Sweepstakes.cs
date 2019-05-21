@@ -8,28 +8,18 @@ namespace SweepStakes
 {
     class Sweepstakes
     {
-        int winningNumber;
-        int rosterCount;
-        Contestant contestant;
+        int winningNumber;        
         int maxPeopleInSweepstakes;
-        SweepstakesStackManager stack;
-        SweepstakesQueueManager queue;
+        
         
         
         
         public Sweepstakes()
         {
             winningNumber = 0;
-            rosterCount = 0;
-            maxPeopleInSweepstakes = 10;
-            stack = new SweepstakesStackManager();
-            queue = new SweepstakesQueueManager();
-            
-        }
-        /*public static Sweepstakesasd(string name)
-        {
-
-        }*/
+            maxPeopleInSweepstakes = 10;           
+        }      
+        
         
 
         public string PickWinner()
@@ -77,7 +67,6 @@ namespace SweepStakes
             contestant.email = Console.ReadLine();
             contestant.registrationNumber = RandomNumber(1, maxPeopleInSweepstakes);
             contestantsRoster.Add(contestant.registrationNumber, contestant);
-            rosterCount++;
             
         }
     }

@@ -10,13 +10,19 @@ namespace SweepStakes
     {
         string response;
         Sweepstakes sweepstakes;
+        public SweepstakesStackManager stack;
+        public SweepstakesQueueManager queue;
+        
         public MarketingFirm()
         {
-            response = null;
-            sweepstakes = new Sweepstakes();
+            ISweepstakesManager stack;
+            
+            
+           
         }
-       
         
+
+
 
     }
 }
