@@ -12,12 +12,14 @@ namespace SweepStakes
         int rosterCount;
         Contestant contestant;
         int maxPeopleInSweepstakes;
+        public string name;
         
         public Sweepstakes()
         {
             winningNumber = 0;
             rosterCount = 0;
             maxPeopleInSweepstakes = 10;
+            name = "random";
         }
         /*public static Sweepstakesasd(string name)
         {
@@ -45,9 +47,13 @@ namespace SweepStakes
         {
 
         };
+        public void PrintDictionary() {           
+                foreach (KeyValuePair<int, string> pair in contestantsRoster)
+            {
+                Console.WriteLine(pair.Key + " - " + pair.Value);
+            };
+        }
 
-
-        
 
         public int RandomNumber(int min, int max)
         {
@@ -56,6 +62,7 @@ namespace SweepStakes
         }
         public void RegisterContestant()
         {
+            
             Contestant person = new Contestant();
             Console.WriteLine("What is your Last Name?");
             person.lastName = Console.ReadLine();
@@ -66,6 +73,7 @@ namespace SweepStakes
             person.registrationNumber = RandomNumber(1, maxPeopleInSweepstakes);
             contestantsRoster.Add(person.registrationNumber, person.lastName);
             rosterCount++;
+            
         }
     }
 }
