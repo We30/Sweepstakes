@@ -12,14 +12,19 @@ namespace SweepStakes
         int rosterCount;
         Contestant contestant;
         int maxPeopleInSweepstakes;
-        public string name;
+        SweepstakesStackManager stack;
+        SweepstakesQueueManager queue;
+        
+        
         
         public Sweepstakes()
         {
             winningNumber = 0;
             rosterCount = 0;
             maxPeopleInSweepstakes = 10;
-            name = "random";
+            stack = new SweepstakesStackManager();
+            queue = new SweepstakesQueueManager();
+            
         }
         /*public static Sweepstakesasd(string name)
         {
@@ -32,23 +37,23 @@ namespace SweepStakes
             winningNumber = RandomNumber(1, maxPeopleInSweepstakes);
             if(contestantsRoster.ContainsKey(winningNumber) == true)
             {
-                return contestantsRoster[winningNumber];
+                return contestantsRoster[winningNumber].info;
             }
             else { return PickWinner(); }
             
         }
 
-        public void PrintContestantInfo()
+        public void PrintContestantInfo(Contestant contestant)
         {
-            Console.WriteLine(contestantsRoster[winningNumber]);
+            Console.WriteLine(contestantsRoster[winningNumber].info);
         }
 
-        Dictionary<int, string> contestantsRoster = new Dictionary<int, string>()
+        Dictionary<int, Contestant> contestantsRoster = new Dictionary<int, Contestant>()
         {
 
         };
         public void PrintDictionary() {           
-                foreach (KeyValuePair<int, string> pair in contestantsRoster)
+                foreach (KeyValuePair<int, Contestant> pair in contestantsRoster)
             {
                 Console.WriteLine(pair.Key + " - " + pair.Value);
             };
@@ -60,18 +65,18 @@ namespace SweepStakes
             Random rando = new Random();
             return rando.Next(min, max);
         }
-        public void RegisterContestant()
+        public void RegisterContestant(Contestant contestant)
         {
+
             
-            Contestant person = new Contestant();
-            Console.WriteLine("What is your Last Name?");
-            person.lastName = Console.ReadLine();
-            Console.WriteLine("What is your First Name?");
-            person.firstName = Console.ReadLine();
-            Console.WriteLine("What is your Email?");
-            person.email = Console.ReadLine();
-            person.registrationNumber = RandomNumber(1, maxPeopleInSweepstakes);
-            contestantsRoster.Add(person.registrationNumber, person.lastName);
+            Console.WriteLine("What is the Last Name?");
+            contestant.lastName = Console.ReadLine();
+            Console.WriteLine("What is the First Name?");
+            contestant.firstName = Console.ReadLine();
+            Console.WriteLine("What is the Email?");
+            contestant.email = Console.ReadLine();
+            contestant.registrationNumber = RandomNumber(1, maxPeopleInSweepstakes);
+            contestantsRoster.Add(contestant.registrationNumber, contestant);
             rosterCount++;
             
         }

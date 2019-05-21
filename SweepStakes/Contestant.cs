@@ -12,12 +12,7 @@ namespace SweepStakes
         public string lastName { get; set; }
         public string email { get; set; }
         public int registrationNumber { get; set; }
-
-        public void Info()
-        {
-            Console.WriteLine(firstName + " " + lastName);
-            Console.WriteLine(email);
-            Console.WriteLine(registrationNumber);
-        }
+        public string info { get { return firstName + lastName + email; } }
+      
     }
 }

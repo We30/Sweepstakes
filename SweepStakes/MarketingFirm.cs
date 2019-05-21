@@ -15,31 +15,8 @@ namespace SweepStakes
             response = null;
             sweepstakes = new Sweepstakes();
         }
-        public void Run()
-        {
-            WouldYouLikeToEnter();
-            sweepstakes.RegisterContestant(Contestant contestant);
-            sweepstakes.PickWinner();
-            sweepstakes.PrintContestantInfo();
-        }
-        void WouldYouLikeToEnter()
-        {
-            UserInterface.WouldYouLikeToEnterQuestion();
-            response = Console.ReadLine();
-            switch (response)
-            {
-                case "yes":
-                    //asdasdasd
-                    break;
-                case "no":
-                    //asdasd
-                    break;
-                default:
-                    UserInterface.NotAnOption();
-                    WouldYouLikeToEnter();
-                    break;
-            }
-        }
+       
+        
 
     }
 }
