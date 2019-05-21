@@ -11,22 +11,28 @@ namespace SweepStakes
         int winningNumber;
         int rosterCount;
         Contestant contestant;
+        int maxPeopleInSweepstakes;
         
         public Sweepstakes()
         {
             winningNumber = 0;
             rosterCount = 0;
+            maxPeopleInSweepstakes = 10;
         }
-        public static Sweepstakesasd(string name)
+        /*public static Sweepstakesasd(string name)
         {
 
-        }
+        }*/
         
 
         public string PickWinner()
         {
-            winningNumber = RandomNumber(1, rosterCount);
-            return contestantsRoster[winningNumber];
+            winningNumber = RandomNumber(1, maxPeopleInSweepstakes);
+            if(contestantsRoster.ContainsKey(winningNumber) == true)
+            {
+                return contestantsRoster[winningNumber];
+            }
+            else { return PickWinner(); }
             
         }
 
@@ -48,17 +54,17 @@ namespace SweepStakes
             Random rando = new Random();
             return rando.Next(min, max);
         }
-        public void RegisterContestant(Contestant contestant)
+        public void RegisterContestant()
         {
-
+            Contestant person = new Contestant();
             Console.WriteLine("What is your Last Name?");
-            contestant.lastName = Console.ReadLine();
+            person.lastName = Console.ReadLine();
             Console.WriteLine("What is your First Name?");
-            contestant.firstName = Console.ReadLine();
+            person.firstName = Console.ReadLine();
             Console.WriteLine("What is your Email?");
-            contestant.email = Console.ReadLine();
-            contestant.registrationNumber = RandomNumber(1, 1000);
-            contestantsRoster.Add(contestant.registrationNumber, contestant.lastName);
+            person.email = Console.ReadLine();
+            person.registrationNumber = RandomNumber(1, maxPeopleInSweepstakes);
+            contestantsRoster.Add(person.registrationNumber, person.lastName);
             rosterCount++;
         }
     }
