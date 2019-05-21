@@ -12,5 +12,13 @@ namespace SweepStakes
         public string lastName { get; set; }
         public string email { get; set; }
         public int registrationNumber { get; set; }
+
+        public void RegisterContestant()
+        {
+            if (UserInterface.WouldYouLikeToEnter == true)
+            {
+
+            }
+        }
     }
 }
