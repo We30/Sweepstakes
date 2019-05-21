@@ -18,7 +18,7 @@ namespace SweepStakes
         public void Run()
         {
             WouldYouLikeToEnter();
-            sweepstakes.RegisterContestant();
+            sweepstakes.RegisterContestant(Contestant contestant);
             sweepstakes.PickWinner();
             sweepstakes.PrintContestantInfo();
         }
