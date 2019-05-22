@@ -25,7 +25,8 @@ namespace SweepStakes
                     return manager;
                 default:
                     UserInterface.NotAValidOption();
-                    return WhichManager(response);
+                    
+                    return WhichManager(UserInterface.GetResponse());
                     
             }
         }

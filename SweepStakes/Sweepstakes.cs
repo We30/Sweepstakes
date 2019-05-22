@@ -50,7 +50,7 @@ namespace SweepStakes
         }
 
 
-        public int RandomNumber(int min, int max)
+        int RandomNumber(int min, int max)
         {
             Random rando = new Random();
             return rando.Next(min, max);
@@ -59,7 +59,7 @@ namespace SweepStakes
         {
             UserInterface.LastNameQuestion();
             contestant.lastName = Console.ReadLine();
-            UserInterface.LastNameQuestion();
+            UserInterface.FirstNameQuestion();
             contestant.firstName = Console.ReadLine();
             UserInterface.EmailQuestion();
             contestant.email = Console.ReadLine();
