@@ -15,12 +15,21 @@ namespace SweepStakes
             Sweepstakes gotmilk1 = new Sweepstakes();
             Sweepstakes gotmilk2 = new Sweepstakes();
             Sweepstakes gotmilk3 = new Sweepstakes();
-            thing.stack.InsertSweepstakes(gotmilk);
-            thing.stack.InsertSweepstakes(gotmilk1);
-            thing.stack.InsertSweepstakes(gotmilk2);
-            thing.stack.InsertSweepstakes(gotmilk3);
-            thing.queue.InsertSweepstakes(gotmilk);
-            thing.stack.GetSweepstakes();
+            Contestant shawn = new Contestant();
+            Contestant domino = new Contestant();
+            Contestant ender = new Contestant();
+            Contestant bre = new Contestant();
+            thing.WhichManager();
+            thing.manager.InsertSweepstakes(gotmilk);
+            thing.manager.InsertSweepstakes(gotmilk1);
+            thing.manager.InsertSweepstakes(gotmilk2);
+            gotmilk.RegisterContestant(shawn);
+            gotmilk.RegisterContestant(domino);
+            gotmilk.RegisterContestant(ender);
+            gotmilk.RegisterContestant(bre);
+            thing.manager.InsertSweepstakes(gotmilk3);
+            thing.manager.InsertSweepstakes(gotmilk2);
+            thing.manager.GetSweepstakes();
             Console.ReadLine();
         }
     }

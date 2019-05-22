@@ -8,20 +8,36 @@ namespace SweepStakes
 {
     class MarketingFirm
     {
-        string response;
-        Sweepstakes sweepstakes;
-        public SweepstakesStackManager stack;
-        public SweepstakesQueueManager queue;
         
+        public ISweepstakesManager manager;
+
+
+
         public MarketingFirm()
-        {
-            ISweepstakesManager stack;
-            
-            
-           
+        {           
+            manager = null;
         }
         
+        public void WhichManager()
+        {           
+                Console.WriteLine("Which manager would you like to use? 'Stack' or 'Queue'");
+                string response = Console.ReadLine();
+                switch (response)
+                {
+                    case "Stack":
+                        manager = new SweepstakesStackManager();
+                        break;
+                    case "Queue":
+                        manager = new SweepstakesStackManager();
+                        break;
+                    default:
+                        Console.WriteLine("That was not a valid option. Please Try again.");
+                        WhichManager();
+                        break;
 
+                }            
+        }
+        
 
 
     }
