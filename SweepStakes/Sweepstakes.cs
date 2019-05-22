@@ -30,7 +30,6 @@ namespace SweepStakes
                 return contestantsRoster[winningNumber].info;
             }
             return contestantsRoster[winningNumber].info;
-
         }
 
         public void PrintWinningContestantInfo()
@@ -57,8 +56,6 @@ namespace SweepStakes
         }
         public void RegisterContestant(Contestant contestant)
         {
-
-
             UserInterface.LastNameQuestion();
             contestant.lastName = Console.ReadLine();
             UserInterface.LastNameQuestion();
@@ -67,9 +64,7 @@ namespace SweepStakes
             contestant.email = Console.ReadLine();
             designatedNumber++;
             contestant.registrationNumber = designatedNumber;
-            contestantsRoster.Add(contestant.registrationNumber, contestant);
-            
-            
+            contestantsRoster.Add(contestant.registrationNumber, contestant);           
         }
     }
 }

@@ -23,7 +23,7 @@ namespace SweepStakes
             thing.manager.InsertSweepstakes(gotmilk);
             thing.manager.InsertSweepstakes(gotmilk1);
             thing.manager.InsertSweepstakes(gotmilk2);
-            gotmilk.RegisterContestant(shawn);
+            gotmilk2.RegisterContestant(shawn);
             thing.manager.InsertSweepstakes(gotmilk3);
             thing.manager.InsertSweepstakes(gotmilk2);
             thing.manager.GetSweepstakes();

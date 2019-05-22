@@ -12,15 +12,12 @@ namespace SweepStakes
        
         public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
-
-            stack.Push(sweepstakes);
-            
+            stack.Push(sweepstakes);          
         }
 
         public Sweepstakes GetSweepstakes()
         {
-            return stack.Pop();
-            
+            return stack.Pop();          
         }
     }
 }

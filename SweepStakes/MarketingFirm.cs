@@ -8,11 +8,7 @@ namespace SweepStakes
 {
     class MarketingFirm
     {
-        
         public ISweepstakesManager manager;
-
-
-
         public MarketingFirm()
         {           
             manager = null;
@@ -34,7 +30,6 @@ namespace SweepStakes
                     UserInterface.NotAValidOption();
                         WhichManager();
                         break;
-
                 }            
         }
         
