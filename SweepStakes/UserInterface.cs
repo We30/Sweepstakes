@@ -24,5 +24,29 @@ namespace SweepStakes
             Console.WriteLine("Thats not an option, please try again.");
         }
 
+        public static void WhichManager()
+        {
+            Console.WriteLine("Which manager would you like to use? 'Stack' or 'Queue'");
+        }
+
+        public static void NotAValidOption()
+        {
+            Console.WriteLine("That was not a valid option. Please Try again.");
+        }
+
+        public static void LastNameQuestion()
+        {
+            Console.WriteLine("What is the Last Name?");
+        }
+
+        public static void FirstNameQuestion()
+        {
+            Console.WriteLine("What is the First Name?");
+        }
+
+        public static void EmailQuestion()
+        {
+            Console.WriteLine("What is the Email?");
+        }
     }
 }

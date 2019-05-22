@@ -12,7 +12,7 @@ namespace SweepStakes
         public string lastName { get; set; }
         public string email { get; set; }
         public int registrationNumber { get; set; }
-        public string info { get { return firstName + lastName + email; } }
+        public string info { get { return firstName +"\n"+ lastName +"\n"+ email; } }
       
     }
 }

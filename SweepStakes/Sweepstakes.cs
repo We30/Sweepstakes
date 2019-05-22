@@ -9,31 +9,31 @@ namespace SweepStakes
     class Sweepstakes
     {
         int winningNumber;        
-        int maxPeopleInSweepstakes;
+        int designatedNumber;
         
         
         
         
         public Sweepstakes()
         {
-            winningNumber = 0;
-            maxPeopleInSweepstakes = 10;           
+            winningNumber = 0;           
+            designatedNumber = 0;
         }      
         
         
 
         public string PickWinner()
         {
-            winningNumber = RandomNumber(1, maxPeopleInSweepstakes);
+            winningNumber = RandomNumber(1, designatedNumber);
             if(contestantsRoster.ContainsKey(winningNumber) == true)
             {
                 return contestantsRoster[winningNumber].info;
             }
-            else { return PickWinner(); }
-            
+            return contestantsRoster[winningNumber].info;
+
         }
 
-        public void PrintContestantInfo(Contestant contestant)
+        public void PrintWinningContestantInfo()
         {
             Console.WriteLine(contestantsRoster[winningNumber].info);
         }
@@ -58,15 +58,17 @@ namespace SweepStakes
         public void RegisterContestant(Contestant contestant)
         {
 
-            
-            Console.WriteLine("What is the Last Name?");
+
+            UserInterface.LastNameQuestion();
             contestant.lastName = Console.ReadLine();
-            Console.WriteLine("What is the First Name?");
+            UserInterface.LastNameQuestion();
             contestant.firstName = Console.ReadLine();
-            Console.WriteLine("What is the Email?");
+            UserInterface.EmailQuestion();
             contestant.email = Console.ReadLine();
-            contestant.registrationNumber = RandomNumber(1, maxPeopleInSweepstakes);
+            designatedNumber++;
+            contestant.registrationNumber = designatedNumber;
             contestantsRoster.Add(contestant.registrationNumber, contestant);
+            
             
         }
     }

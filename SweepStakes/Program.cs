@@ -24,9 +24,6 @@ namespace SweepStakes
             thing.manager.InsertSweepstakes(gotmilk1);
             thing.manager.InsertSweepstakes(gotmilk2);
             gotmilk.RegisterContestant(shawn);
-            gotmilk.RegisterContestant(domino);
-            gotmilk.RegisterContestant(ender);
-            gotmilk.RegisterContestant(bre);
             thing.manager.InsertSweepstakes(gotmilk3);
             thing.manager.InsertSweepstakes(gotmilk2);
             thing.manager.GetSweepstakes();

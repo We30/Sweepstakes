@@ -19,8 +19,8 @@ namespace SweepStakes
         }
         
         public void WhichManager()
-        {           
-                Console.WriteLine("Which manager would you like to use? 'Stack' or 'Queue'");
+        {
+            UserInterface.WhichManager();
                 string response = Console.ReadLine();
                 switch (response)
                 {
@@ -28,10 +28,10 @@ namespace SweepStakes
                         manager = new SweepstakesStackManager();
                         break;
                     case "Queue":
-                        manager = new SweepstakesStackManager();
+                        manager = new SweepstakesQueueManager();
                         break;
                     default:
-                        Console.WriteLine("That was not a valid option. Please Try again.");
+                    UserInterface.NotAValidOption();
                         WhichManager();
                         break;
 
