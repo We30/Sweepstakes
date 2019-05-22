@@ -8,8 +8,8 @@ namespace SweepStakes
 {
     static class UserInterface
     {
-
-        public static void WhichManager()
+        
+        public static void WhichManagerQuestion()
         {
             Console.WriteLine("Which manager would you like to use? 'Stack' or 'Queue'");
         }
@@ -32,6 +32,12 @@ namespace SweepStakes
         public static void EmailQuestion()
         {
             Console.WriteLine("What is the Email?");
+        }
+
+        public static string GetResponse()
+        {
+            string response = Console.ReadLine();
+            return response;
         }
     }
 }

@@ -10,14 +10,15 @@ namespace SweepStakes
     {
         int winningNumber;        
         int designatedNumber;
+        string name;
         
         
         
-        
-        public Sweepstakes()
+        public Sweepstakes(string name)
         {
             winningNumber = 0;           
             designatedNumber = 0;
+            this.name = name;
         }      
         
         

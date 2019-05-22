@@ -10,23 +10,26 @@ namespace SweepStakes
     {
         static void Main(string[] args)
         {
-            MarketingFirm thing = new MarketingFirm();
-            Sweepstakes gotmilk = new Sweepstakes();
-            Sweepstakes gotmilk1 = new Sweepstakes();
-            Sweepstakes gotmilk2 = new Sweepstakes();
-            Sweepstakes gotmilk3 = new Sweepstakes();
+            SweepstakesManagerFactory smf = new SweepstakesManagerFactory();
+
+            //var manager = smf.WhichManager("queue");
+            UserInterface.WhichManagerQuestion();
+            MarketingFirm thing = new MarketingFirm(smf.WhichManager(UserInterface.GetResponse()));
+            Sweepstakes gotmilk = new Sweepstakes("got milk");
+            Sweepstakes gotmilk1 = new Sweepstakes("got milk1");
+            Sweepstakes gotmilk2 = new Sweepstakes("got milk2");
+            Sweepstakes gotmilk3 = new Sweepstakes("got milk3");
             Contestant shawn = new Contestant();
             Contestant domino = new Contestant();
             Contestant ender = new Contestant();
-            Contestant bre = new Contestant();
-            thing.WhichManager();
+            Contestant bre = new Contestant();       
             thing.manager.InsertSweepstakes(gotmilk);
             thing.manager.InsertSweepstakes(gotmilk1);
             thing.manager.InsertSweepstakes(gotmilk2);
             gotmilk2.RegisterContestant(shawn);
             thing.manager.InsertSweepstakes(gotmilk3);
             thing.manager.InsertSweepstakes(gotmilk2);
-            thing.manager.GetSweepstakes();
+            Sweepstakes s =  thing.manager.GetSweepstakes();
             Console.ReadLine();
         }
     }
